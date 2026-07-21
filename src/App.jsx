@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "./components/index.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -13,7 +14,7 @@ function App() {
     
 
     <div>
-       <h1>VirusWatch</h1>
+
 
       <SelectedSymptoms />
 
