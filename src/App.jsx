@@ -9,14 +9,19 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [selectedSymptoms, setSelectedSymptoms] = useState([]);
+
 
   return (
     
 
     <div>
 
+  <SelectedSymptoms
+                selectedSymptoms={selectedSymptoms}
+                setSelectedSymptoms={setSelectedSymptoms}
 
-      <SelectedSymptoms />
+            />
 
     </div>
 

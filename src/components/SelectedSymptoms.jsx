@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./index.css";
 
-function SelectedSymptoms() {
+function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms } ) {
+
     const symptoms = [
         "Fever",
         "Cough",
@@ -14,8 +14,7 @@ function SelectedSymptoms() {
         "Shortness of Breath"
     ];
 
-    const [selectedSymptoms, setSelectedSymptoms] = useState([]);
-
+    
     function toggleSymptom(symptom) {
         if (selectedSymptoms.includes(symptom)) {
             setSelectedSymptoms(
