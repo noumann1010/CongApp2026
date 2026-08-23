@@ -1,4 +1,30 @@
-import sickness from listOfSicknesses.js;
+import sicknesses from listOfSicknesses.js;
+
+function sicknessMatcher(selectedSymptoms) {
+    const result = [];
+    sicknesses.forEach((sickness) => {
+
+        let matches = 0;
+
+        sickness.symptoms.forEach((symptom) => {
+
+            if (selectedSymptoms.includes(symptom)) {
+                matches++;
+            }
+
+        });
+
+        result.push({
+            id: sickness.id,
+            name: sickness.name,
+            matches: matches,
+            advice: sickness.advice
+        });
+
+    });
+
+}
+
 
 //code
 // sicknesses = {...}
