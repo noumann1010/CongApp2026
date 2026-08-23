@@ -1,24 +1,24 @@
 const sicknesses = [
   {
-    Id: 1,
-    Name: "covid",
-    Symptoms: [
-      "Fever",
-      "Chills",
-      "Cough",
-      "Shortness of Breath",
-      "Sore Throat",
-      "Runny Nose",
-      "Nasal Congestion",
-      "Body Aches",
-      "Headache",
-      "Fatigue",
-      "Nausea",
-      "Vomiting",
-      "Diarrhea",
-      "Loss of Taste or Smell"
+    id: 1,
+    name: "covid",
+    symptoms: [
+      "fever",
+      "chills",
+      "cough",
+      "shortness of breath",
+      "sore throat",
+      "runny nose",
+      "nasal congestion",
+      "body aches",
+      "headache",
+      "fatigue",
+      "nausea",
+      "vomiting",
+      "diarrhea",
+      "loss of taste or smell"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use over-the-counter symptom relief as directed",
@@ -26,20 +26,20 @@ const sicknesses = [
     ]
   },
   {
-    Id: 2,
-    Name: "flu",
-    Symptoms: [
-      "Fever",
-      "Chills",
-      "Cough",
-      "Sore Throat",
-      "Runny Nose",
-      "Nasal Congestion",
-      "Body Aches",
-      "Headache",
-      "Fatigue"
+    id: 2,
+    name: "flu",
+    symptoms: [
+      "fever",
+      "chills",
+      "cough",
+      "sore throat",
+      "runny nose",
+      "nasal congestion",
+      "body aches",
+      "headache",
+      "fatigue"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use over-the-counter symptom relief as directed",
@@ -47,19 +47,19 @@ const sicknesses = [
     ]
   },
   {
-    Id: 3,
-    Name: "common cold",
-    Symptoms: [
-      "Fever",
-      "Cough",
-      "Sore Throat",
-      "Runny Nose",
-      "Nasal Congestion",
-      "Sneezing",
-      "Body Aches",
-      "Headache"
+    id: 3,
+    name: "common cold",
+    symptoms: [
+      "fever",
+      "cough",
+      "sore throat",
+      "runny nose",
+      "nasal congestion",
+      "sneezing",
+      "body aches",
+      "headache"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use a clean humidifier",
@@ -67,20 +67,20 @@ const sicknesses = [
     ]
   },
   {
-    Id: 4,
-    Name: "strep throat",
-    Symptoms: [
-      "Fever",
-      "Sore Throat",
-      "Pain When Swallowing",
-      "Swollen Tonsils",
-      "Swollen Lymph Nodes",
-      "Headache",
-      "Nausea",
-      "Vomiting",
-      "Stomach Pain"
+    id: 4,
+    name: "strep throat",
+    symptoms: [
+      "fever",
+      "sore throat",
+      "pain when swallowing",
+      "swollen tonsils",
+      "swollen lymph nodes",
+      "headache",
+      "nausea",
+      "vomiting",
+      "stomach pain"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "get tested by a healthcare provider",
       "take prescribed antibiotics",
       "complete all prescribed antibiotics",
@@ -88,19 +88,19 @@ const sicknesses = [
     ]
   },
   {
-    Id: 5,
-    Name: "sinus infection",
-    Symptoms: [
-      "Runny Nose",
-      "Nasal Congestion",
-      "Facial Pain",
-      "Headache",
-      "Cough",
-      "Sore Throat",
-      "Postnasal Drip",
-      "Bad Breath"
+    id: 5,
+    name: "sinus infection",
+    symptoms: [
+      "runny nose",
+      "nasal congestion",
+      "facial pain",
+      "headache",
+      "cough",
+      "sore throat",
+      "postnasal drip",
+      "bad breath"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use saline nasal spray",
@@ -109,15 +109,15 @@ const sicknesses = [
     ]
   },
   {
-    Id: 6,
-    Name: "ear infection",
-    Symptoms: [
-      "Ear Pain",
-      "Fever",
-      "Difficulty Sleeping",
-      "Irritability"
+    id: 6,
+    name: "ear infection",
+    symptoms: [
+      "ear pain",
+      "fever",
+      "difficulty sleeping",
+      "irritability"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "apply a warm compress to the ear",
       "use over-the-counter symptom relief as directed",
       "see a healthcare provider if pain is severe or persistent",
@@ -125,17 +125,17 @@ const sicknesses = [
     ]
   },
   {
-    Id: 7,
-    Name: "acute bronchitis",
-    Symptoms: [
-      "Cough",
-      "Mucus",
-      "Fatigue",
-      "Nasal Congestion",
-      "Sore Throat",
-      "Body Aches"
+    id: 7,
+    name: "acute bronchitis",
+    symptoms: [
+      "cough",
+      "mucus",
+      "fatigue",
+      "nasal congestion",
+      "sore throat",
+      "body aches"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use a clean humidifier",
@@ -143,17 +143,17 @@ const sicknesses = [
     ]
   },
   {
-    Id: 8,
-    Name: "pneumonia",
-    Symptoms: [
-      "Fever",
-      "Chills",
-      "Cough",
-      "Shortness of Breath",
-      "Chest Pain",
-      "Fatigue"
+    id: 8,
+    name: "pneumonia",
+    symptoms: [
+      "fever",
+      "chills",
+      "cough",
+      "shortness of breath",
+      "chest pain",
+      "fatigue"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "seek medical evaluation",
       "take prescribed medicine exactly as directed",
       "rest",
@@ -162,18 +162,18 @@ const sicknesses = [
     ]
   },
   {
-    Id: 9,
-    Name: "norovirus",
-    Symptoms: [
-      "Nausea",
-      "Vomiting",
-      "Diarrhea",
-      "Stomach Pain",
-      "Fever",
-      "Headache",
-      "Body Aches"
+    id: 9,
+    name: "norovirus",
+    symptoms: [
+      "nausea",
+      "vomiting",
+      "diarrhea",
+      "stomach pain",
+      "fever",
+      "headache",
+      "body aches"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "take frequent small sips of fluids",
       "use an oral rehydration drink",
@@ -181,17 +181,17 @@ const sicknesses = [
     ]
   },
   {
-    Id: 10,
-    Name: "urinary tract infection",
-    Symptoms: [
-      "Pain When Urinating",
-      "Frequent Urination",
-      "Stomach Pain",
-      "Cloudy Urine",
-      "Strong-Smelling Urine",
-      "Fever"
+    id: 10,
+    name: "urinary tract infection",
+    symptoms: [
+      "pain when urinating",
+      "frequent urination",
+      "stomach pain",
+      "cloudy urine",
+      "strong-smelling urine",
+      "fever"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "seek medical evaluation",
       "take prescribed antibiotics",
       "complete all prescribed antibiotics",
@@ -199,16 +199,16 @@ const sicknesses = [
     ]
   },
   {
-    Id: 11,
-    Name: "pink eye",
-    Symptoms: [
-      "Eye Redness",
-      "Eye Swelling",
-      "Watery Eyes",
-      "Eye Discharge",
-      "Eye Itching"
+    id: 11,
+    name: "pink eye",
+    symptoms: [
+      "eye redness",
+      "eye swelling",
+      "watery eyes",
+      "eye discharge",
+      "eye itching"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "apply a clean cold compress",
       "use artificial tears as directed",
       "stop wearing contact lenses until symptoms are gone",
@@ -216,18 +216,18 @@ const sicknesses = [
     ]
   },
   {
-    Id: 12,
-    Name: "mononucleosis",
-    Symptoms: [
-      "Fatigue",
-      "Fever",
-      "Sore Throat",
-      "Headache",
-      "Body Aches",
-      "Swollen Lymph Nodes",
-      "Rash"
+    id: 12,
+    name: "mononucleosis",
+    symptoms: [
+      "fatigue",
+      "fever",
+      "sore throat",
+      "headache",
+      "body aches",
+      "swollen lymph nodes",
+      "rash"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "use over-the-counter symptom relief as directed",
@@ -235,15 +235,15 @@ const sicknesses = [
     ]
   },
   {
-    Id: 13,
-    Name: "hand foot and mouth disease",
-    Symptoms: [
-      "Fever",
-      "Sore Throat",
-      "Mouth Sores",
-      "Rash"
+    id: 13,
+    name: "hand foot and mouth disease",
+    symptoms: [
+      "fever",
+      "sore throat",
+      "mouth sores",
+      "rash"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "rest",
       "drink plenty of fluids",
       "eat soft and cool foods",
@@ -251,17 +251,17 @@ const sicknesses = [
     ]
   },
   {
-    Id: 14,
-    Name: "chickenpox",
-    Symptoms: [
-      "Fever",
-      "Fatigue",
-      "Headache",
-      "Loss of Appetite",
-      "Rash",
-      "Skin Itching"
+    id: 14,
+    name: "chickenpox",
+    symptoms: [
+      "fever",
+      "fatigue",
+      "headache",
+      "loss of appetite",
+      "rash",
+      "skin itching"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "contact a healthcare provider",
       "apply calamine lotion",
       "take a cool oatmeal bath",
@@ -270,16 +270,16 @@ const sicknesses = [
     ]
   },
   {
-    Id: 15,
-    Name: "impetigo",
-    Symptoms: [
-      "Skin Redness",
-      "Skin Itching",
-      "Skin Sores",
-      "Skin Discharge",
-      "Yellow Crust"
+    id: 15,
+    name: "impetigo",
+    symptoms: [
+      "skin redness",
+      "skin itching",
+      "skin sores",
+      "skin discharge",
+      "yellow crust"
     ],
-    Treatment_tips: [
+    treatment_tips: [
       "get evaluated by a healthcare provider",
       "use prescribed antibiotics",
       "keep skin sores clean and covered",
