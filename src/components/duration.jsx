@@ -1,6 +1,6 @@
 import "./EnterDuration.css";
 
-function EnterDuration({ duration, setDuration }) {
+function EnterDuration({ duration, setDuration, onNext }) {
     const durationOptions = [
         "Less than 1 day",
         "1–2 days",

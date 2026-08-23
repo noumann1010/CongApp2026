@@ -1,6 +1,6 @@
 import "./SelectedSymptoms.css";
 
-function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms }) {
+function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
     const symptoms = [
         "Fever",
         "Cough",
@@ -95,8 +95,9 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms }) {
 
             </div>
 
-            <button className="vw-next-button">
+            <button className="vw-next-button" onClick={onNext}>
                 Continue
+
             </button>
 
         </div>
