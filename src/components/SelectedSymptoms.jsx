@@ -1,7 +1,6 @@
-import { useState } from "react";
+import "./SelectedSymptoms.css";
 
-function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms } ) {
-
+function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms }) {
     const symptoms = [
         "Fever",
         "Cough",
@@ -14,7 +13,6 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms } ) {
         "Shortness of Breath"
     ];
 
-    
     function toggleSymptom(symptom) {
         if (selectedSymptoms.includes(symptom)) {
             setSelectedSymptoms(
@@ -26,71 +24,78 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms } ) {
     }
 
     return (
-        <div className="selected-symptoms">
+        <div className="vw-symptoms-container">
 
-            <h1>Check your Symptoms!</h1>
+            <h1 className="vw-symptoms-title">
+                Check your Symptoms!
+            </h1>
 
-            <p>Answer these questions, let VirusWatch do the rest!</p>
+            <p className="vw-symptoms-subtitle">
+                Answer these questions, let VirusWatch do the rest!
+            </p>
 
-            <div className="progress-bar">
+            <div className="vw-progress">
 
-                <div className="step active">
-                    <div className="circle">1</div>
+                <div className="vw-step vw-active">
+                    <div className="vw-circle">1</div>
                     <span>Symptoms</span>
                 </div>
 
-                <div className="line"></div>
+                <div className="vw-line"></div>
 
-                <div className="step">
-                    <div className="circle">2</div>
+                <div className="vw-step">
+                    <div className="vw-circle">2</div>
                     <span>Duration</span>
                 </div>
 
-                <div className="line"></div>
+                <div className="vw-line"></div>
 
-                <div className="step">
-                    <div className="circle">3</div>
+                <div className="vw-step">
+                    <div className="vw-circle">3</div>
                     <span>Other Details</span>
                 </div>
 
-                <div className="line"></div>
+                <div className="vw-line"></div>
 
-                <div className="step">
-                    <div className="circle">4</div>
+                <div className="vw-step">
+                    <div className="vw-circle">4</div>
                     <span>Results</span>
                 </div>
 
             </div>
 
-            <div className="symptom-grid">
+            <div className="vw-symptom-grid">
 
                 {symptoms.map((symptom) => (
                     <label
                         key={symptom}
                         className={
                             selectedSymptoms.includes(symptom)
-                                ? "symptom-card selected"
-                                : "symptom-card"
+                                ? "vw-symptom-card vw-selected"
+                                : "vw-symptom-card"
                         }
                     >
+
                         <input
                             type="checkbox"
                             checked={selectedSymptoms.includes(symptom)}
                             onChange={() => toggleSymptom(symptom)}
                         />
 
-                        <span className="checkbox">
+                        <span className="vw-checkbox">
                             {selectedSymptoms.includes(symptom) ? "✓" : ""}
                         </span>
 
-                        <h3>{symptom}</h3>
+                        <span className="vw-symptom-name">
+                            {symptom}
+                        </span>
 
                     </label>
                 ))}
 
             </div>
 
-            <button className="next-button">
+            <button className="vw-next-button">
                 Continue
             </button>
 
