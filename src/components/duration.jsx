@@ -1,6 +1,6 @@
 import "./EnterDuration.css";
 
-function EnterDuration({ duration, setDuration, onNext }) {
+function EnterDuration({ duration, setDuration, onBack, onNext }) {
     const durationOptions = [
         "Less than 1 day",
         "1–2 days",
@@ -85,11 +85,11 @@ function EnterDuration({ duration, setDuration, onNext }) {
 
             <div className="vw-duration-buttons">
 
-                <button className="vw-back-button">
+                <button className="vw-back-button" onClick={onBack}>
                     Back
                 </button>
 
-                <button className="vw-next-button">
+                <button className="vw-next-button" onClick={onNext}>
                     Continue
                 </button>
 

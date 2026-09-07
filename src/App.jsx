@@ -5,7 +5,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import SelectedSymptoms from "./components/SelectedSymptoms";
 import Duration from "./components/duration";
-
+import OtherDetails from "./components/otherDetails";
 import './App.css'
 
 function App() {
@@ -34,9 +34,17 @@ function App() {
                 <Duration
                     duration={duration}
                     setDuration={setDuration}
+                    onBack={() => setStep(1)}
                     onNext={() => setStep(3)}
                 />
             )}      
+
+            {step === 3 && (
+                <OtherDetails
+                    onBack={() => setStep(2)}
+                    onNext={() => setStep(4)}
+                />
+            )}
     </div>
 
   );  
