@@ -1,4 +1,5 @@
 import "./EnterDuration.css";
+import { useState } from "react";
 
 function EnterDuration({ duration, setDuration, onBack, onNext }) {
     const durationOptions = [
@@ -9,6 +10,17 @@ function EnterDuration({ duration, setDuration, onBack, onNext }) {
         "More than 1 week",
         "More than 2 weeks"
     ];
+
+const [error, setError] = useState("");
+
+    function handleContinue() {
+        if (duration === "") {
+            setError("Please select a duration.");
+            return;
+        }
+        setError(""); 
+        onNext();
+    }
 
     return (
         <div className="vw-duration-container">
@@ -51,6 +63,8 @@ function EnterDuration({ duration, setDuration, onBack, onNext }) {
 
             </div>
 
+            {error && <p className="vw-error">{error}</p>}
+            
             <div className="vw-duration-grid">
 
                 {durationOptions.map((option) => (
@@ -89,7 +103,7 @@ function EnterDuration({ duration, setDuration, onBack, onNext }) {
                     Back
                 </button>
 
-                <button className="vw-next-button" onClick={onNext}>
+                <button className="vw-next-button" onClick={handleContinue}>
                     Continue
                 </button>
 

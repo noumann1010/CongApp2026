@@ -1,4 +1,5 @@
 import "./SelectedSymptoms.css";
+import { useState } from "react";
 
 function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
     const symptoms = [
@@ -55,7 +56,7 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
             setError("Please select at least one symptom.");
             return;
         }
-        setError("");
+        setError(""); 
         onNext();
     }
 
@@ -109,6 +110,7 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
                 </div>
 
             </div>
+            {error && <p className="vw-error">{error}</p>}
 
             <div className="vw-symptom-grid">
 
@@ -141,7 +143,7 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
 
             </div>
 
-            {error && <p className="vw-error">{error}</p>}
+            
 
             <button className="vw-next-button" onClick={handleContinue}>
                 Continue

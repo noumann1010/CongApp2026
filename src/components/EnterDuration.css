@@ -168,6 +168,21 @@
 }
 
 
+.vw-error {
+    color: red;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+    
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.5;
+}
 
 .vw-duration-extra {
     display: flex;
