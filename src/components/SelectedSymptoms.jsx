@@ -48,6 +48,17 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
     "Yellow Crust"
 ];
 
+    const [error, setError] = useState("");
+
+    function handleContinue() {
+        if (selectedSymptoms.length === 0) {
+            setError("Please select at least one symptom.");
+            return;
+        }
+        setError("");
+        onNext();
+    }
+
     function toggleSymptom(symptom) {
         if (selectedSymptoms.includes(symptom)) {
             setSelectedSymptoms(
@@ -130,7 +141,9 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
 
             </div>
 
-            <button className="vw-next-button" onClick={onNext}>
+            {error && <p className="vw-error">{error}</p>}
+
+            <button className="vw-next-button" onClick={handleContinue}>
                 Continue
 
             </button>
