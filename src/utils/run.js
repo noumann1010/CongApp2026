@@ -1,29 +1,42 @@
-import sicknesses from listOfSicknesses.js;
+import sicknesses from "./listOfSicknesses.js";
 
 function sicknessMatcher(selectedSymptoms) {
+
     const result = [];
+
+    const userSymptoms = selectedSymptoms.map(
+        (symptom) => symptom.toLowerCase()
+    );
+
     sicknesses.forEach((sickness) => {
 
         let matches = 0;
 
         sickness.symptoms.forEach((symptom) => {
 
-            if (selectedSymptoms.includes(symptom)) {
+            if (userSymptoms.includes(symptom.toLowerCase())) {
                 matches++;
             }
 
         });
 
-        result.push({
-            id: sickness.id,
-            name: sickness.name,
-            matches: matches,
-            advice: sickness.advice
-        });
+        if (matches > 0) {
+            result.push({
+                id: sickness.id,
+                name: sickness.name,
+                matches: matches,
+                advice: sickness.treatment_tips
+            });
+        }
 
     });
 
+    result.sort((a, b) => b.matches - a.matches);
+
+    return result;
 }
+
+export default sicknessMatcher;
 
 
 //code
