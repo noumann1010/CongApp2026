@@ -8,6 +8,7 @@ import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import './App.css'
 import { ClerkProvider } from "@clerk/react";
+import results from "./components/result";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -45,6 +46,10 @@ function App() {
                     onBack={() => setStep(2)}
                     onNext={() => setStep(4)}
                 />
+            )}
+
+            {step === 4 && (
+                <results />
             )}
     </div>
 
