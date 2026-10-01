@@ -7,6 +7,7 @@ import SelectedSymptoms from "./components/SelectedSymptoms";
 import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import './App.css'
+import { ClerkProvider } from "@clerk/react";
 
 function App() {
   const [count, setCount] = useState(0)
