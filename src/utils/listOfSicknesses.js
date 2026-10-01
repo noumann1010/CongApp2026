@@ -287,3 +287,4 @@ const sicknesses = [
     ]
   }
 ];
+export default sicknesses;
