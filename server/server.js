@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import { testAI } from "./ai.js";
 import sicknessMatcher from "../src/utils/run.js";
 
 const app = express();
@@ -16,6 +16,20 @@ app.post("/match", (req, res) => {
     const results = sicknessMatcher(selectedSymptoms);
 
     res.json(results);
+});
+
+app.post("/ai-test", async (req, res) => {
+  try {
+    const reply = await testAI();
+    res.json({ success: true, reply });
+  } catch (error) {
+    console.error("AI request failed:", error.message);
+
+    res.status(500).json({
+      success: false,
+      error: "AI request failed. Check the server terminal.",
+    });
+  }
 });
 
 app.listen(5002, () => {
