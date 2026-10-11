@@ -108,4 +108,4 @@ function results({  }) {
     );
 }
 
-export default SelectedSymptoms;
+export default results;

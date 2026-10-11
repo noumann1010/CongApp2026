@@ -8,6 +8,8 @@ import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import './App.css'
 import { ClerkProvider } from "@clerk/react";
+import results from "./components/result";
+import Header from "./components/header";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,7 @@ function App() {
   return (
   
     <div>
+        <Header />
     {step === 1 && (
 
     
