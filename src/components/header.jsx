@@ -1,3 +1,4 @@
+import "./EnterDuration.css";
 import "./header.css";
 import {
     Show,
