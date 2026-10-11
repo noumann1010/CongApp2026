@@ -1,19 +1,42 @@
-import {
-  Show,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/react";
 
-export default function Header() {
-  return (
-    <header className="header">
-      <h1>VirusWatch</h1>
-      <nav>
-        <SignInButton />
-        <SignUpButton />
-        <UserButton />
-      </nav>
-    </header>
-  );
-}
+import {
+    Show,
+    SignInButton,
+    SignUpButton,
+    UserButton,
+  } from "@clerk/react";
+  
+
+  
+  function Header() {
+    return (
+      <header className="vw-header">
+        <a className="vw-logo" href="/">
+          VirusWatch
+        </a>
+  
+        <nav className="vw-header-actions">
+          <Show when="signed-out">
+            <SignInButton>
+              <button className="vw-login-button">
+                Sign In
+              </button>
+            </SignInButton>
+  
+            <SignUpButton>
+              <button className="vw-signup-button">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+  
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
+        </nav>
+      </header>
+    );
+  }
+  
+  export default Header;
+  
