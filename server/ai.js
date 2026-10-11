@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import { fileURLToPath } from "node:url";
 
@@ -7,22 +7,21 @@ dotenv.config({
 });
 
 export async function testAI() {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error("Missing OPENAI_API_KEY in server/.env");
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error("Missing GEMINI_API_KEY in server/.env");
   }
 
-  const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
+  // Initialize the client. It automatically uses process.env.GEMINI_API_KEY
+  const ai = new GoogleGenAI({});
 
-  const response = await client.responses.create({
-    model: process.env.OPENAI_MODEL || "gpt-6-astra",
+  const interaction = await ai.interactions.create({
+    model: process.env.GEMINI_MODEL || "gemini-3.8-flash",
     input: "Reply with exactly: The AI API is working!",
   });
 
-  if (!response.output_text?.trim()) {
+  if (!interaction.output_text?.trim()) {
     throw new Error("The API returned no text.");
   }
 
-  return response.output_text;
+  return interaction.output_text;
 }
