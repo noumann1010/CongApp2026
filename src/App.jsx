@@ -3,13 +3,14 @@ import "./components/index.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import SelectedSymptoms from "./components/selectedSymptoms";
+import SelectedSymptoms from "./components/SelectedSymptoms";
 import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import './App.css'
 import { ClerkProvider } from "@clerk/react";
 import results from "./components/result";
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -49,6 +50,10 @@ function App() {
                     onNext={() => setStep(4)}
                 />
             )}
+
+            
+            
+        <Footer />
     </div>
 
   );  

@@ -2,51 +2,86 @@ import "./SelectedSymptoms.css";
 import { useState } from "react";
 
 function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
-    const symptoms = [
-    "Fever",
-    "Chills",
-    "Cough",
-    "Shortness of Breath",
-    "Sore Throat",
-    "Runny Nose",
-    "Nasal Congestion",
-    "Body Aches",
-    "Headache",
-    "Fatigue",
-    "Nausea",
-    "Vomiting",
-    "Diarrhea",
-    "Loss of Taste or Smell",
-    "Sneezing",
-    "Pain When Swallowing",
-    "Swollen Tonsils",
-    "Swollen Lymph Nodes",
-    "Stomach Pain",
-    "Facial Pain",
-    "Postnasal Drip",
-    "Bad Breath",
-    "Ear Pain",
-    "Difficulty Sleeping",
-    "Irritability",
-    "Mucus",
-    "Chest Pain",
-    "Pain When Urinating",
-    "Frequent Urination",
-    "Cloudy Urine",
-    "Strong-Smelling Urine",
-    "Eye Redness",
-    "Eye Swelling",
-    "Watery Eyes",
-    "Eye Discharge",
-    "Eye Itching",
-    "Rash",
-    "Mouth Sores",
-    "Loss of Appetite",
-    "Skin Itching",
-    "Skin Redness",
-    "Skin Sores",
-    "Skin Discharge",
-    "Yellow Crust"
+const symptomCategories = [
+    {
+        category: "General & Whole Body",
+        symptoms: [
+            "Fever",
+            "Chills",
+            "Body Aches",
+            "Fatigue",
+            "Headache",
+            "Swollen Lymph Nodes",
+            "Difficulty Sleeping",
+            "Irritability"
+        ]
+    },
+    {
+        category: "Nose, Throat & Ears",
+        symptoms: [
+            "Sore Throat",
+            "Runny Nose",
+            "Nasal Congestion",
+            "Sneezing",
+            "Loss of Taste or Smell",
+            "Pain When Swallowing",
+            "Swollen Tonsils",
+            "Facial Pain",
+            "Postnasal Drip",
+            "Bad Breath",
+            "Ear Pain",
+            "Mouth Sores"
+        ]
+    },
+    {
+        category: "Chest & Breathing",
+        symptoms: [
+            "Cough",
+            "Shortness of Breath",
+            "Mucus",
+            "Chest Pain"
+        ]
+    },
+    {
+        category: "Stomach & Digestion",
+        symptoms: [
+            "Nausea",
+            "Vomiting",
+            "Diarrhea",
+            "Stomach Pain",
+            "Loss of Appetite"
+        ]
+    },
+    {
+        category: "Urinary",
+        symptoms: [
+            "Pain When Urinating",
+            "Frequent Urination",
+            "Cloudy Urine",
+            "Strong-Smelling Urine"
+        ]
+    },
+    {
+        category: "Eyes",
+        symptoms: [
+            "Eye Redness",
+            "Eye Swelling",
+            "Watery Eyes",
+            "Eye Discharge",
+            "Eye Itching"
+        ]
+    },
+    {
+        category: "Skin",
+        symptoms: [
+            "Rash",
+            "Skin Itching",
+            "Skin Redness",
+            "Skin Sores",
+            "Skin Discharge",
+            "Yellow Crust"
+        ]
+    }
 ];
 
     const [error, setError] = useState("");
@@ -70,9 +105,8 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
         }
     }
 
-    return (
+   return (
         <div className="vw-symptoms-container">
-
             <h1 className="vw-symptoms-title">
                 Check your Symptoms!
             </h1>
@@ -82,7 +116,6 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
             </p>
 
             <div className="vw-progress">
-
                 <div className="vw-step vw-active">
                     <div className="vw-circle">1</div>
                     <span>Symptoms</span>
@@ -108,48 +141,62 @@ function SelectedSymptoms({ selectedSymptoms, setSelectedSymptoms, onNext }) {
                     <div className="vw-circle">4</div>
                     <span>Results</span>
                 </div>
-
             </div>
-            {error && <p className="vw-error">{error}</p>}
 
-            <div className="vw-symptom-grid">
+            {error && <p className="vw-error" role="alert">{error}</p>}
 
-                {symptoms.map((symptom) => (
-                    <label
-                        key={symptom}
-                        className={
-                            selectedSymptoms.includes(symptom)
-                                ? "vw-symptom-card vw-selected"
-                                : "vw-symptom-card"
-                        }
+            <div className="vw-symptom-categories">
+                {symptomCategories.map((category) => (
+                    <section
+                        key={category.category}
+                        className="vw-symptom-category"
                     >
+                        <h2 className="vw-symptom-category-title">
+                            {category.category}
+                        </h2>
 
-                        <input
-                            type="checkbox"
-                            checked={selectedSymptoms.includes(symptom)}
-                            onChange={() => toggleSymptom(symptom)}
-                        />
+                        <div className="vw-symptom-grid">
+                            {category.symptoms.map((symptom) => (
+                                <label
+                                    key={symptom}
+                                    className={
+                                        selectedSymptoms.includes(symptom)
+                                            ? "vw-symptom-card vw-selected"
+                                            : "vw-symptom-card"
+                                    }
+                                >
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedSymptoms.includes(symptom)}
+                                        onChange={() => toggleSymptom(symptom)}
+                                    />
 
-                        <span className="vw-checkbox">
-                            {selectedSymptoms.includes(symptom) ? "✓" : ""}
-                        </span>
+                                    <span
+                                        className="vw-checkbox"
+                                        aria-hidden="true"
+                                    >
+                                        {selectedSymptoms.includes(symptom)
+                                            ? "✓"
+                                            : ""}
+                                    </span>
 
-                        <span className="vw-symptom-name">
-                            {symptom}
-                        </span>
-
-                    </label>
+                                    <span className="vw-symptom-name">
+                                        {symptom}
+                                    </span>
+                                </label>
+                            ))}
+                        </div>
+                    </section>
                 ))}
-
             </div>
 
-            
-
-            <button className="vw-next-button" onClick={handleContinue}>
+            <button
+                type="button"
+                className="vw-next-button"
+                onClick={handleContinue}
+            >
                 Continue
-
             </button>
-
         </div>
     );
 }

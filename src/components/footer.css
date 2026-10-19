@@ -1,0 +1,63 @@
+
+.vw-header {
+  width: 100%;
+  background-color: #0f0cd6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vw-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.vw-logo:hover {
+  opacity: 0.85;
+}
+
+.vw-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vw-login-button,
+.vw-signup-button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.vw-login-button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.vw-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.vw-signup-button {
+  color: #0f0cd6;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.vw-signup-button:hover {
+  background-color: #e9e9ff;
+  transform: translateY(-1px);
+}
+

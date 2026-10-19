@@ -294,3 +294,22 @@
     }
 
 }
+
+.vw-symptom-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.vw-symptom-category-title {
+    margin: 0 0 16px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.vw-symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 16px;
+}
