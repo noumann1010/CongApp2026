@@ -1,12 +1,13 @@
 
 import { useState } from "react";
 import "./components/index.css";
-import SelectedSymptoms from "./components/selectedSymptoms";
+import SelectedSymptoms from "./components/SelectedSymptoms";
 import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import "./App.css";
 import { ClerkProvider } from "@clerk/react";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import ResultPage from "./components/result";
 
 function App() {
@@ -91,8 +92,11 @@ function App() {
                     onBack={() => setStep(3)}
                 />
             )}
+
+            
+            
+        <Footer />
         </div>
     );
 }
-
 export default App;

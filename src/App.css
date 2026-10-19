@@ -181,4 +181,31 @@
     right: 0;
     border-right-color: var(--border);
   }
+
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: block;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.vw-symptoms-container {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
 }
