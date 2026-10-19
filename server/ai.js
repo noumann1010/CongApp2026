@@ -3,25 +3,30 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "node:url";
 
 dotenv.config({
-  path: fileURLToPath(new URL(".env", import.meta.url)),
+  path: fileURLToPath(new URL("./.env", import.meta.url)),
 });
 
 export async function testAI() {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error("Missing GEMINI_API_KEY in server/.env");
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error(
+      "Missing GEMINI_API_KEY. Check that server/.env exists."
+    );
   }
 
-  // Initialize the client. It automatically uses process.env.GEMINI_API_KEY
-  const ai = new GoogleGenAI({});
+  const ai = new GoogleGenAI({ apiKey });
 
-  const interaction = await ai.interactions.create({
+  const response = await ai.models.generateContent({
     model: process.env.GEMINI_MODEL || "gemini-3.8-flash",
-    input: "Reply with exactly: The AI API is working!",
+    contents: "Reply with exactly: The AI API is working!",
   });
 
-  if (!interaction.output_text?.trim()) {
-    throw new Error("The API returned no text.");
+  const output = response.text?.trim();
+
+  if (!output) {
+    throw new Error("Gemini returned an empty response.");
   }
 
-  return interaction.output_text;
+  return output;
 }

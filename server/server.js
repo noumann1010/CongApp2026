@@ -37,3 +37,21 @@ app.listen(5002, () => {
 }).on("error", (error) => {
     console.error("Server error:", error);
 });
+
+app.get("/test-ai", async (req, res) => {
+    try {
+      const message = await testAI();
+  
+      res.json({
+        success: true,
+        message: message,
+      });
+    } catch (error) {
+      console.error("Gemini error:", error.message);
+  
+      res.status(500).json({
+        success: false,
+        error: "Gemini API request failed.",
+      });
+    }
+  });

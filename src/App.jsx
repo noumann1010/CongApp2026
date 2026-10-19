@@ -3,7 +3,7 @@ import "./components/index.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import SelectedSymptoms from "./components/SelectedSymptoms";
+import SelectedSymptoms from "./components/selectedSymptoms";
 import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import './App.css'
