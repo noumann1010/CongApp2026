@@ -1,0 +1,87 @@
+.vw-result-container {
+    width: calc(100% - 48px);
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #202124;
+    border-radius: 16px;
+}
+
+.vw-result-container > h1 {
+    margin: 0 0 32px;
+    color: #2010df;
+    font-size: 36px;
+    text-align: center;
+}
+
+.vw-result-card {
+    margin-bottom: 24px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-left: 5px solid #2010df;
+    border-radius: 12px;
+}
+
+.vw-result-card h2 {
+    margin: 0 0 12px;
+    color: #2010df;
+    font-size: 24px;
+}
+
+.vw-result-card p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.vw-result-card h3 {
+    margin: 0 0 12px;
+    color: #202124;
+    font-size: 18px;
+}
+
+.vw-result-card ul {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.vw-result-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.vw-result-container > button {
+    display: block;
+    margin: 28px auto 0;
+    padding: 12px 32px;
+    background: #2010df;
+    color: #ffffff;
+    border: 2px solid #2010df;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.vw-result-container > button:hover {
+    background: #160ba8;
+}
+
+.vw-result-container > button:focus-visible {
+    outline: 3px solid #2010df;
+    outline-offset: 4px;
+}
+
+.vw-result-container > p {
+    color: #595959;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.vw-result-container > p:last-child {
+    margin: 24px 0 0;
+    font-size: 14px;
+}

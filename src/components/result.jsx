@@ -1,4 +1,4 @@
-import "./SelectedSymptoms.css";
+import "./results.css";
 import { useState } from "react";
 
 function ResultPage({ results, onBack }) {
@@ -29,6 +29,9 @@ function ResultPage({ results, onBack }) {
             <p>
                 These results show symptom overlap and are not a
                 medical diagnosis.
+                They are intended for informational purposes only. Please consult a healthcare professional for any medical concerns.
+                The results are based on the information you provided and may not reflect your actual health condition.
+                The information provided is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
             </p>
         </div>
     );
@@ -36,111 +39,3 @@ function ResultPage({ results, onBack }) {
 
 export default ResultPage;
 
-// function results({  }) {
- 
-//     const [error, setError] = useState("");
-
-//     function handleContinue() {
-//         if (selectedSymptoms.length === 0) {
-//             setError("Please select at least one symptom.");
-//             return;
-//         }
-//         setError(""); 
-//         onNext();
-//     }
-
-//     function toggleSymptom(symptom) {
-//         if (selectedSymptoms.includes(symptom)) {
-//             setSelectedSymptoms(
-//                 selectedSymptoms.filter(item => item !== symptom)
-//             );
-//         } else {
-//             setSelectedSymptoms([...selectedSymptoms, symptom]);
-//         }
-//     }
-
-//     return (
-//         <div className="vw-symptoms-container">
-
-//             <h1 className="vw-symptoms-title">
-//                 Check your Symptoms!
-//             </h1>
-
-//             <p className="vw-symptoms-subtitle">
-//                 Answer these questions, let VirusWatch do the rest!
-//             </p>
-
-//             <div className="vw-progress">
-
-//                 <div className="vw-step vw-active">
-//                     <div className="vw-circle">1</div>
-//                     <span>Symptoms</span>
-//                 </div>
-
-//                 <div className="vw-line"></div>
-
-//                 <div className="vw-step">
-//                     <div className="vw-circle">2</div>
-//                     <span>Duration</span>
-//                 </div>
-
-//                 <div className="vw-line"></div>
-
-//                 <div className="vw-step">
-//                     <div className="vw-circle">3</div>
-//                     <span>Other Details</span>
-//                 </div>
-
-//                 <div className="vw-line"></div>
-
-//                 <div className="vw-step">
-//                     <div className="vw-circle">4</div>
-//                     <span>Results</span>
-//                 </div>
-
-//             </div>
-//             {error && <p className="vw-error">{error}</p>}
-
-//             <div className="vw-symptom-grid">
-
-//                 {symptoms.map((symptom) => (
-//                     <label
-//                         key={symptom}
-//                         className={
-//                             selectedSymptoms.includes(symptom)
-//                                 ? "vw-symptom-card vw-selected"
-//                                 : "vw-symptom-card"
-//                         }
-//                     >
-
-//                         <input
-//                             type="checkbox"
-//                             checked={selectedSymptoms.includes(symptom)}
-//                             onChange={() => toggleSymptom(symptom)}
-//                         />
-
-//                         <span className="vw-checkbox">
-//                             {selectedSymptoms.includes(symptom) ? "✓" : ""}
-//                         </span>
-
-//                         <span className="vw-symptom-name">
-//                             {symptom}
-//                         </span>
-
-//                     </label>
-//                 ))}
-
-//             </div>
-
-            
-
-//             <button className="vw-next-button" onClick={handleContinue}>
-//                 Continue
-
-//             </button>
-
-//         </div>
-//     );
-// }
-
-// export default results;
