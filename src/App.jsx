@@ -9,7 +9,7 @@ import { ClerkProvider } from "@clerk/react";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import ResultPage from "./components/result";
-import dashboard from "./components/dashboard";
+import Dashboard from "./components/Dashboard";
 
 function App() {
     const [selectedSymptoms, setSelectedSymptoms] = useState([]);
@@ -62,7 +62,8 @@ function App() {
     
 
             {step === 0 && (
-                <dashboard />
+                <Dashboard
+                onStart={() => setStep(1)} />
             )}
 
             {step === 1 && (

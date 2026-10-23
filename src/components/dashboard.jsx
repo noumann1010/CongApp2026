@@ -2,7 +2,7 @@ import React from 'react';
 import { useUser } from "@clerk/react";
 
 
-function dashboard() {
+function Dashboard() {
   const { user, isSignedIn, isLoading } = useUser();
   if(isLoading) {
     return <div>Loading...</div>;
@@ -16,11 +16,11 @@ function dashboard() {
       ) : (
         <p>Please sign in to view your dashboard.</p>
       )}
-      <p>Welcome to the <VirusWatch>VirusWatch</VirusWatch>!</p>
+      <p>Welcome to the VirusWatch!</p>
     </div>
   );
 
  
 } 
 
-export default dashboard;
+export default Dashboard;
