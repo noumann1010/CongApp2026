@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { testAI } from "./ai.js";
 import sicknessMatcher from "../src/utils/run.js";
+import { getHealthInformation } from "./ai.js";
 
 const app = express();
 
@@ -52,6 +53,44 @@ app.get("/test-ai", async (req, res) => {
       res.status(500).json({
         success: false,
         error: "Gemini API request failed.",
+      });
+    }
+  });
+
+  app.post("/api/ai-advice", async (req, res) => {
+    try {
+      const { symptoms, duration } = req.body;
+  
+      if (
+        !Array.isArray(symptoms) ||
+        symptoms.length === 0 ||
+        !symptoms.every(
+          (symptom) => typeof symptom === "string"
+        ) ||
+        typeof duration !== "string" ||
+        !duration.trim()
+      ) {
+        return res.status(400).json({
+          success: false,
+          error: "Please provide symptoms and duration.",
+        });
+      }
+  
+      const advice = await getHealthInformation(
+        symptoms,
+        duration
+      );
+  
+      res.json({
+        success: true,
+        advice: advice,
+      });
+    } catch (error) {
+      console.error("AI advice error:", error.message);
+  
+      res.status(500).json({
+        success: false,
+        error: "Unable to generate health information.",
       });
     }
   });
