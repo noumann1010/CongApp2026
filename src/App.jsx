@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import "./components/index.css";
-import SelectedSymptoms from "./components/SelectedSymptoms";
+import SelectedSymptoms from "./components/selectedSymptoms";
 import Duration from "./components/duration";
 import OtherDetails from "./components/otherDetails";
 import "./App.css";
@@ -88,8 +88,10 @@ function App() {
 
             {step === 4 && (
                 <ResultPage
-                    results={results}
-                    onBack={() => setStep(3)}
+                  results={results}
+                  selectedSymptoms={selectedSymptoms}
+                  duration={duration}
+                  onBack={() => setStep(3)}
                 />
             )}
 
