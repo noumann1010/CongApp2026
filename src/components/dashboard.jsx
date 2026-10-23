@@ -2,7 +2,7 @@ import React from 'react';
 import { useUser } from "@clerk/react";
 
 
-function dashboard(isLoggedIn) {
+function dashboard() {
   const { user, isSignedIn, isLoading } = useUser();
   if(isLoading) {
     return <div>Loading...</div>;
@@ -19,4 +19,8 @@ function dashboard(isLoggedIn) {
       <p>Welcome to the <VirusWatch>VirusWatch</VirusWatch>!</p>
     </div>
   );
-}
+
+ 
+} 
+
+export default dashboard;
