@@ -13,7 +13,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
     const [selectedSymptoms, setSelectedSymptoms] = useState([]);
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(1);
     const [duration, setDuration] = useState("");
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -61,10 +61,10 @@ function App() {
 
     
 
-            {step === 0 && (
+            {/* {step === 0 && (
                 <Dashboard
                 onStart={() => setStep(1)} />
-            )}
+            )} */}
 
             {step === 1 && (
                 <SelectedSymptoms
