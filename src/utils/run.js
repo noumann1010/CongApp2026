@@ -32,8 +32,25 @@ function sicknessMatcher(selectedSymptoms) {
     });
 
     result.sort((a, b) => b.matches - a.matches);
+   // No matching sicknesses
+    if (result.length === 0) {
+        return [];
+    }
 
-    return result;
+    const highestMatches = result[0].matches;
+
+    // If highest match count is less than 3,
+    // return the top 3 matching sicknesses
+    if (highestMatches < 3) {
+        return result.slice(0, 3);
+    }
+
+    // Otherwise, return only sicknesses tied
+    // for the highest match count
+    return result.filter(
+        (sickness) => sickness.matches === highestMatches
+    );
+
 }
 
 export default sicknessMatcher;
