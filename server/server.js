@@ -94,3 +94,57 @@ app.get("/test-ai", async (req, res) => {
       });
     }
   });
+
+   app.get("/api/cdc", async (req, res) => {
+   try {
+       const url = new URL(
+           "https://data.cdc.gov/api/v3/views/f3zz-zga5/query.json"
+       );
+
+
+       // Request recent records, newest week first
+       url.searchParams.set("$order", "week_end DESC");
+       url.searchParams.set("$limit", "100");
+
+
+       const response = await fetch(url);
+
+
+       if (!response.ok) {
+           throw new Error(`CDC API error: ${response.status}`);
+       }
+
+
+       const data = await response.json();
+
+
+       // Keep only records from the newest reporting week
+       const latestWeek = data[0]?.week_end;
+
+
+       const latestRecords = data.filter(
+           (record) => record.week_end === latestWeek
+       );
+
+
+       const alerts = latestRecords.map((record) => ({
+           state: record.geography,
+           date: record.week_end,
+           level: record.label,
+           title: "Respiratory Illness Activity"
+       }));
+
+
+       console.log("CDC records returned:", alerts.length);
+
+
+       res.json(alerts);
+   } catch (error) {
+       console.error("CDC API error:", error.message);
+
+
+       res.status(500).json({
+           error: "Unable to fetch CDC data"
+       });
+   }
+});
