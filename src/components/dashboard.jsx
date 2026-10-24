@@ -4,7 +4,7 @@ import "./dashboard.css";
 
 
 
-function Dashboard({ onStart, onNotifications }) {
+function Dashboard({ onStart, onNotifications, onAbout }) {
   const { user, isSignedIn, isLoaded } = useUser();
 
   if (!isLoaded) {
@@ -20,7 +20,7 @@ function Dashboard({ onStart, onNotifications }) {
           <a href="/" className="active">Home</a>
           <button onClick={onStart}>Symptoms</button>
           <button onClick={onNotifications}>Notifications</button>
-          <a href="/about">About</a>
+          <button onClick={onAbout}>About</button>
         </nav>
       </aside>
 
