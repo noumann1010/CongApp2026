@@ -10,6 +10,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import ResultPage from "./components/result";
 import Dashboard from "./components/dashboard";
+import Notifications from "./components/notifications";
 
 function App() {
     const [selectedSymptoms, setSelectedSymptoms] = useState([]);
@@ -64,6 +65,7 @@ function App() {
             {step === 0 && (
                 <Dashboard
                     onStart={() => setStep(1)}
+                    onNotifications={() => setStep(5)}
                 />
             )}
 
@@ -103,6 +105,14 @@ function App() {
                   onBack={() => setStep(3)}
                 />
             )}
+            {step === 5 && (
+                <div>
+                <Notifications />
+                <button onClick={() => setStep(0)}>
+                  Back to Home
+                </button>
+                </div>
+)}
 
             
             

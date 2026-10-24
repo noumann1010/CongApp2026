@@ -1,0 +1,12 @@
+.notifications {
+  padding: 30px;
+  text-align: left;
+}
+
+.notification {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+}

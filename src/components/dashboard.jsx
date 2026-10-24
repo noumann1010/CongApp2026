@@ -3,9 +3,11 @@ import { useUser } from "@clerk/react";
 import "./dashboard.css";
 
 
-function Dashboard() {
-  const { user, isSignedIn, isLoading } = useUser();
-  if(isLoading) {
+
+function Dashboard({ onStart, onNotifications }) {
+  const { user, isSignedIn, isLoaded } = useUser();
+
+  if (!isLoaded) {
     return <div>Loading...</div>;
   }
 
@@ -16,8 +18,8 @@ function Dashboard() {
 
         <nav className="dashboard-nav">
           <a href="/" className="active">Home</a>
-          <a href="/SelectedSymptoms">Symptoms</a>
-            
+          <button onClick={onStart}>Symptoms</button>
+          <button onClick={onNotifications}>Notifications</button>
           <a href="/about">About</a>
         </nav>
       </aside>
@@ -40,9 +42,10 @@ function Dashboard() {
             to stay informed and healthy.
           </p>
 
-          <a href="/SelectedSymptoms" className="dashboard-check-button">
+          
+          <button onClick={onStart} className="dashboard-check-button">
             Check Symptoms
-          </a>
+          </button>
         </section>
 
         <section className="dashboard-symptoms">
@@ -53,9 +56,9 @@ function Dashboard() {
             illnesses and get helpful information.
           </p>
 
-          <a href="/SelectedSymptoms" className="dashboard-start-button">
+          <button onClick={onStart} className="dashboard-check-button">
             Get Started
-          </a>
+          </button>
         </section>
       </main>
     </div>
