@@ -1,6 +1,5 @@
 import "./notifications.css";
-import useState from "react";
-import useEffect from "react";
+import {useState, useEffect} from "react";
 
 
 
@@ -41,13 +40,13 @@ function notifications({notifications = []}) {
         <div className="notifications">
             <h1>Notifications</h1>
             <p>Stay updated with recent outbreaks in the United States.</p>
-            <h3>{alert.state}</h3>
+            <h3>{alerts.state}</h3>
 
-<p>{alert.title}</p>
+<p>{alerts.title}</p>
 
 <p>
                                    Activity Level:
-                                    <strong> {alert.level}</strong>
+                                    <strong> {alerts.level}</strong>
                              </p>
 
             {notifications.map((notification, index) => (
