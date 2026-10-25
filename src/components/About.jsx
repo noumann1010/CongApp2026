@@ -21,7 +21,7 @@ function About() {
             information about potential illnesses.
           </li>
           <li>
-            Notifications: Users receive information about outbreaks in
+            Notifications: Users receive information about respiratory illnesses in
             the United States.
           </li>
           <li>

@@ -10,3 +10,77 @@
   margin-top: 15px;
   border-radius: 8px;
 }
+.vw-result-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  color: #101b36;
+}
+
+.vw-result-container > h1 {
+  color: #0f0cd6;
+  margin-bottom: 25px;
+}
+
+.vw-result-card {
+  background-color: white;
+  border: 1px solid #e5eaf3;
+  border-left: 4px solid #0f0cd6;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.vw-result-card h2 {
+  color: #0f0cd6;
+  font-size: 24px;
+  margin: 0 0 15px;
+}
+
+.vw-result-card h3 {
+  font-size: 18px;
+  margin: 20px 0 10px;
+}
+
+.vw-result-card p {
+  color: #526585;
+  line-height: 1.6;
+}
+
+.vw-result-card ul {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.vw-result-card li {
+  color: #526585;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.notifications {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.notification {
+  background-color: white;
+  border: 1px solid #e5eaf3;
+  border-left: 4px solid #0f0cd6;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.notification h3 {
+  color: #0f0cd6;
+  margin: 0 0 15px;
+}
+
+.notification p {
+  color: #526585;
+  margin: 8px 0;
+}
