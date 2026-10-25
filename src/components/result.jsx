@@ -88,46 +88,44 @@ function ResultPage({  results, selectedSymptoms, duration, onBack }) {
                 ))
             )}
 
-            <button onClick={onBack}>Back</button>
+           
 
-            <p>
-                These results show symptom overlap and are not a
+            
+            <section className="ai-advice">
+    <h2>AI Health Information</h2>
+
+    {loading && (
+        <div className="ai-loading">
+            <div className="ai-spinner"></div>
+            <p>Gemini is preparing your health information...</p>
+        </div>
+    )}
+
+    {error && (
+        <div className="ai-error">
+            <p>{error}</p>
+            <p>Please try again later.</p>
+        </div>
+    )}
+
+    {!loading && !error && advice && (
+        <div className="ai-content">
+            <ReactMarkdown>{advice}</ReactMarkdown>
+        </div>
+    )}
+</section>
+
+<p>
+    These results show symptom overlap and are not a
                 medical diagnosis.
                 They are intended for informational purposes only. Please consult a healthcare professional for any medical concerns.
                 The results are based on the information you provided and may not reflect your actual health condition.
                 The information provided is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
-            </p>
+</p>
 
-            <section className="ai-advice">
-                <h2>AI Health Information</h2>
-
-                {loading && (
-                    <div className="ai-loading">
-                    <div className="ai-spinner"></div>
-                    <p>Gemini is preparing your health information...</p>
-                    </div>
-                )}
-
-                {error && (
-                    <div className="ai-error">
-                    <p>{error}</p>
-                    <p>Please try again later.</p>
-                    </div>
-                )}
-
-                {!loading && !error && advice && (
-                    <div className="ai-content">
-                    <ReactMarkdown>{advice}</ReactMarkdown>
-                    </div>
-                )}
-
-                <p className="ai-disclaimer">
-                    VirusWatch provides general educational information,
-                    not a medical diagnosis. Consult a healthcare
-                    professional for medical concerns.
-                </p>
-                </section>
-        </div>
+    <button onClick={onBack}>Back</button>
+              </div>
+        
     );
 }
 
